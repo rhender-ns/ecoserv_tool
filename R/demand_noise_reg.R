@@ -106,9 +106,9 @@ demand_noise_reg <- function(x = parent.frame()$mm,
 
    # Are the weights specified correctly?
    if (is.numeric(indic_weights)){
-      if (length(indic_weights) != 3){  # if only one weight specified we assign it to each layer
+      if (length(indic_weights) != 3){  # if only one weight specified we assign defaults
          message("Weights should have 3 values for this model. Defaulting to weights of c(1, 0.5, 0.5).")
-         indic_weights <- c(1,1,1,1)
+         indic_weights <- c(1, 0.5, 0.5)
       }
    } else stop("Weights must be a numeric vector of length 3 for this model. Please refer to documentation. Specify a weight of 0 if you want to ignore a dataset.")
 
